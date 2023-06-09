@@ -22,7 +22,7 @@ exports.signIn = async (req, res) => {
       // Generate JWT token for authentication
       const token = jwt.sign({ sellerId: seller._id }, 'your-secret-key');
   
-      res.status(200).json({ message: 'Seller signed in successfully', token });
+      res.status(200).json({ message: 'Seller signed in successfully' ,name: seller.name });
     } catch (error) {
       res.status(500).json({ message: 'Internal server error' });
       console.log(error)
